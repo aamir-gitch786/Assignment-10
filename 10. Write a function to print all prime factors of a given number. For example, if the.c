@@ -4,26 +4,26 @@ number is 36 then your result should be 2, 2, 3, 3. (TSRN)
 
 *******************************************************************************/
 
-#include <stdio.h>
-void prime(int );
-
+#include<stdio.h>
+void factors(int);
 int main()
-{  int n;
-    printf("Enter the number : ");
+{
+    int n;
+    printf("Enter the number\n");
     scanf("%d",&n);
-    prime(n);
-    return 0;
+    factors(n);
 }
-void prime(int n)
-{ int i=2;
-printf("All prime factors of %d is :",n);
-while(n!=1)
- {   while(n%i==0)
+void factors(int n)
+{
+    for(int i=2;i<=n;i++)
     {
-       printf("%d ",i);
-       n=n/i;
+        while(i)
+       { if(n%i==0)
+            { printf("%d ",i);
+            n=n/i;
+            }
+         else
+         break;
+       }
     }
-    i++;
-}
-
 }
